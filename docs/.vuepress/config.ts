@@ -34,7 +34,7 @@ export default defineUserConfig({
             '/text/': [
                 {
                     text: '精品文章',
-                    children: ['/reference/cli.md', '/reference/config.md'],
+                    // children: ['/reference/cli.md', '/reference/config.md'],
                 },
             ],
         },
