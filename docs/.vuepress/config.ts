@@ -1,17 +1,11 @@
 import { defaultTheme, defineUserConfig } from 'vuepress';
-import { prismjsPlugin } from '@vuepress/plugin-prismjs';
 
 export default defineUserConfig({
     lang: 'zh-CN',
     title: '武秦乾学习园地',
     description: '个人成长记录',
     base: '/daily_workout/',
-    plugins: [
-        prismjsPlugin({
-            // 配置项
-            preloadLanguages: ['markdown', 'typescript', 'javascript', 'jsdoc'],
-        }),
-    ],
+    plugins: [],
     theme: defaultTheme({
         navbar: [
             // NavbarItem
