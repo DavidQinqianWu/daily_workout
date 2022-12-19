@@ -1,11 +1,18 @@
 import { defaultTheme, defineUserConfig } from 'vuepress';
+import { shikiPlugin } from '@vuepress/plugin-shiki';
 
 export default defineUserConfig({
     lang: 'zh-CN',
     title: '武秦乾学习园地',
     description: '个人成长记录',
     base: '/daily_workout/',
-    plugins: [],
+
+    plugins: [
+        shikiPlugin({
+            theme: 'one-dark-pro',
+            langs: ['javascript', 'typescript', 'vue-html', 'css', 'scss'],
+        }),
+    ],
     theme: defaultTheme({
         navbar: [
             // NavbarItem
@@ -18,19 +25,5 @@ export default defineUserConfig({
                 link: '/text/',
             },
         ],
-        sidebar: {
-            '/algorithm/': [
-                {
-                    text: '算法',
-                    // children: ['/guide/README.md', '/guide/getting-started.md'],
-                },
-            ],
-            '/text/': [
-                {
-                    text: '精品文章',
-                    // children: ['/reference/cli.md', '/reference/config.md'],
-                },
-            ],
-        },
     }),
 });
