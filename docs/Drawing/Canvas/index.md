@@ -24,6 +24,12 @@ canvasDOM.getContext(contextType, contextAttributes);
 
 `moveTo`设置初始位置, `lineTo`设置终点位置, `lineJoin` 两个线交点位置样式, 等等设置的方法
 
-#### 三角形 / 多边形
+#### 三角形
 
 `stoke`的时候,需要考虑到最后的点就是第一个点. 而`fill`则不用回到初始点, 直接可以调用`fill()`进行颜色填充
+
+#### 矩形
+
+`strokeRect()` 方法来直接绘制矩形的边框, `fillRect()` 则是可以直接填充一个矩形
+
+#### 圆弧和圆
