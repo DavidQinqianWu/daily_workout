@@ -33,3 +33,32 @@ canvasDOM.getContext(contextType, contextAttributes);
 `strokeRect()` 方法来直接绘制矩形的边框, `fillRect()` 则是可以直接填充一个矩形
 
 #### 圆弧和圆
+
+`arc(x,y,radius,startAngle, endAngle, anticlockwise)`, 角度转弧度的公式为：`弧度 = 角度 * Math.PI / 180`.
+
+#### 绘制图像到canvas
+
+`createPattern(image, type)` 参数为:
+
+* Image 参数可以是一个 Image 对象，也可以是一个 canvas 对象
+* Type 为图案绘制的类型，可用的类型分别有：`repeat`,`repeat-x`,`repeat-y` 和 `no-repeat`。
+
+```js
+ // 获取 canvas 元素
+    var canvas = document.getElementById('canvas');
+    // 通过判断getContext方法是否存在来判断浏览器的支持性
+    if(canvas.getContext) {
+      // 获取绘图上下文
+      var ctx = canvas.getContext('2d');
+      // 创建一个 image对象
+      var img = new Image();
+      img.src = "./image.png";
+      img.onload = function() {
+        // 图片加载完以后
+        // 创建图案
+        var ptrn = ctx.createPattern(img, 'no-repeat');
+        ctx.fillStyle = ptrn;
+        ctx.fillRect(0, 0, 500, 500);
+      }
+    }
+```
